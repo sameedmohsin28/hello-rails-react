@@ -102,6 +102,6 @@ I would like to thank Microverse for teaching me Ruby on Rails.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/sameedmohsin28/hello-rails-react/blob/ build-project/LICENSE) licensed.
+This project is [MIT](https://github.com/sameedmohsin28/hello-rails-react/blob/build-project/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
