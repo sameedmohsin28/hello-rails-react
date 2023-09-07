@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchGreeting } from '../Redux/messageSlice';
 const Greeting = () => {
   const dispatch = useDispatch();
-  const greeting = useSelector((state) => state.message.greeting);
-  const isLoading = useSelector((state) => state.message.isLoading);
+  const greeting = useSelector((state) => state.message.greetingMessage);
+  const isLoading = useSelector((state) => state.message.isLoadingGreeting);
   useEffect(() => {
     dispatch(fetchGreeting());
   }, [dispatch]);

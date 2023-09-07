@@ -14,25 +14,24 @@ export const fetchGreeting = createAsyncThunk(
       }
     }
   );
-const messageSlice = createSlice ({
-    name: 'message',
-    initialState: {
-        greeting: '',
-        isLoading: false,
-    },
-    reducers: {},
-    extraReducers: (builder) => {
-        builder
-        .addCase(fetchGreeting.pending, (state) => {
-            state.isLoading = true;
-        })
-        .addCase(fetchGreeting.fulfilled, (state, action) => {
-            state.isLoading = false;
-            state.greeting = action.payload.greeting_message;
-        })
-        .addCase(fetchGreeting.rejected, (state) => {
-            state.isLoading = false;
-        });
-    },
+
+  
+// reducer for greetings
+const initialGreetingState = {
+  greetingMessage: '',
+  isLoadingGreeting: false,
+}
+
+const greetingSlice = createSlice ({
+  name: 'greeting',
+  initialState: initialGreetingState,
+  extraReducers(builder) {
+    builder
+      .addCase(fetchGreeting.fulfilled, (state, action) => ({
+        ...state,
+        isLoadingGreeting: false,
+        greetingMessage: action.payload.greeting_message,
+      }))
+  }
 })
-export default messageSlice.reducer;
+export default greetingSlice.reducer
